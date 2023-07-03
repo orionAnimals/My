@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bohdan Zahorovets portfolio ∫ Webdev</title>
+	<title>Bohdan Zahorovets portfolio | Hire webdeveloper</title>
 	<!-- main css -->
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<!-- glider css slider -->
@@ -16,9 +16,9 @@
 <body>
 
 
-	<div class="div_shadow_jaz_tobi_kazav">
+	<!-- <div class="div_shadow_jaz_tobi_kazav">
 		Далбайоб! Я ж тобі писав не заходити з телефона🤦
-	</div>
+	</div> -->
 
 	<!-- toggle dark-white theme  -->
 	<div class="container_button_theme">
@@ -27,12 +27,47 @@
 
 	<div class="Header_wrapper">
 		<header class="header" id="header">
+			<!-- pc menu -->
 			<nav class="navigation_header">
 				<a href="#" id="logo" class="logo"><img src="Images/logo_M.png" alt="Bohdan Zahorovets logo"></a>
-				<ul>
+
+				<ul class="header_nav_big_screen">
 					<li><a href="#about_me"><span>Ab</span>out me</a></li>
 					<li><a href="#portfolio"><span>Po</span>rtfolio</a></li>
-					<li><a href="#"><span>Co</span>ntact me</a></li>
+					<li><a href="#contact_me"><span>Co</span>ntact me</a></li>
+				</ul>
+			</nav>
+			<!-- mobile menu -->
+			
+			<!-- mobile menu -->
+			<nav class="navigation_header_mobile">
+				<div class="row_logo_n_btn">
+					<a href="#" class="logo"><img src="Images/logo_M.png" alt="Bohdan Zahorovets logo"></a>
+				
+					<button id="hamburger_button" class="hamburger_ico_wrapp">
+						<span class="bar"></span>
+					</button>
+				</div>
+
+				<ul class="mobile_menu">
+					<a href="#about_me">
+						<li>
+							<i class="fa-solid fa-user"></i>
+							<span>About me</span>
+						</li>
+					</a>
+					<a href="#portfolio">
+						<li>
+							<i class="fa-solid fa-code"></i>
+							<span>Portfolio</span>
+						</li>
+					</a>
+					<a href="#contact_me">
+						<li>
+							<i class="fa-solid fa-envelope"></i>
+							<span>Contact me</span>
+						</li>
+					</a>
 				</ul>
 			</nav>
 		</header>
@@ -43,7 +78,7 @@
 		<!-- About me -->
 			<div class="about_me_main_wrapper" id="about_me">
 				<div class="container_img_MF">
-					<img src="Images/aurora.jpg" alt="Zahorovets Bohdan photo">
+					<img src="Images/Me.jpg" alt="Zahorovets Bohdan photo">
 				</div>
 				<!-- text about me -->
 				<div class="container_about_me_text">
@@ -52,7 +87,7 @@
 						I can build different kinds of websites including: landing pages, internet shops, blogs, portfolios(If you want me to fix some bugs or change something on your pre build website plz contact me with one of the options down below). Pricing depends on project difficulty and extra features that you might want me to do. </p>
 					<div class="wrp_btns">
 						<a class="button_about_me" href="#portfolio">Portfolio</a>
-						<a class="button_about_me" href="#">Contact me</a>
+						<a class="button_about_me" href="#contact_me">Contact me</a>
 					</div>
 				</div>
 			</div>
@@ -254,8 +289,41 @@
 					<button class="img_button_gall"><img class="img_small" src="Images/Aurora-music__imgs/Aurora-music.com_Desctop_3.png" alt="Aurora-music.com image 3"></button>
 				</div>
 			</div>
+			<!-- Portfolio end/// -->
 
+			<!-- Contact me form  -->
+			<span class="title_part_of_page" id="contact_me" style="color: var(--orange-main);">Do you have any questions?<br> Write them down below!</span>
+			<div class="wrapper_contact_me_main">
+				
 
+				<div class="container_column_with_inputs">
+					<!-- user E-mail -->
+					<label for="E_mail">*Your E-mail:</label><br/>
+					<input class="input_custom" type="email" id="E_mail" placeholder="Enter Your E-mail...">
+					<!-- user Name -->
+					<label for="Name">*Your Name:</label><br/>
+					<input class="input_custom" type="text" id="Name" placeholder="Enter Your Name...">
+					<!-- drag n' drop block -->
+					<div class="file_send_wrapper">
+						<span>Select file or drag it to this area</span>
+					</div>
+				</div>
+				<div class="container_column_with_inputs">
+					<label for="TExt">Your message:</label><br/>
+					<textarea class="input_custom big" type="text" id="TExt" placeholder="Write you message..."></textarea>
+				</div>
+				<!-- submit btn and other contact types -->
+				<div class="submit_socials_container">
+					<button>Send</button>
+
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
 		<!-- container end///-->
 		</div>
 	</main>

@@ -10,11 +10,19 @@ function scrollFunction() {
     header_fixed.classList.remove("fixed");
   }
 }
+
+// mobile menu hamburger
+let hamburger_button = document.getElementById("hamburger_button")
+hamburger_button.onclick = function () {
+  header_fixed.classList.toggle("EXPANDED");
+}
+
+
 // theme toggle
 let btn_toggler = document.getElementById("toggle_theme_btn");
 let body = document.querySelector("body");
 
-let logo_img = document.getElementById("logo");
+let logo_img = document.querySelector(".logo");
   btn_toggler.onclick = function() {
     body.classList.toggle("active");
 
@@ -29,35 +37,63 @@ let logo_img = document.getElementById("logo");
 
 // photo gallery viev mode toggling
 
-let wrapp_gallery_main = document.querySelectorAll(".wrapp_main_gallery");
-let button_overflow_viev_mode = document.querySelectorAll(".button_overflow_viev_mode");
+let wrapp_gallery_main = document.querySelectorAll(".wrapp_main_project");
 
-button_overflow_viev_mode.forEach(button_overflow_viev_mode => {
-  button_overflow_viev_mode.onclick = function() {
-    if (button_overflow_viev_mode.classList == "button_overflow_viev_mode selected") {
-      button_overflow_viev_mode.classList.remove("selected");
-    } else {
-      button_overflow_viev_mode.classList.add("selected");
-    }
-  }
-});
+
 // details toggle about project
 
-wrapp_gallery_main.forEach(wrapp_gallery_main => {
   
-  let button_details = wrapp_gallery_main.querySelector(".show_details_btn");
-  let wrapper_details_project = wrapp_gallery_main.querySelector(".wrapper_details_project");
 
+  wrapp_gallery_main.forEach(wrapp_gallery_main => {
+    // DETAILS PROJECT SHOW
+    let button_details = wrapp_gallery_main.querySelector("#show_details_btn");
+    let wrapper_details_project = wrapp_gallery_main.querySelector(".wrapper_details_project");
     button_details.onclick = function () {
       wrapper_details_project.classList.toggle("active");
-    };
-});
+    }
+    // SCREEN SIZE CHANGE VIEV MODES
+
+    let button_overflow_viev_mode = wrapp_gallery_main.querySelectorAll(".button_overflow_viev_mode");
+
+    button_overflow_viev_mode.onclick = function() {
+      if (button_overflow_viev_mode.classList == "button_overflow_viev_mode selected") {
+        button_overflow_viev_mode.classList.remove("selected");
+      } else {
+        button_overflow_viev_mode.classList.add("selected");
+      }
+    }
+  })
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+class shit {
+  constructor(age, name, job){
+    this.age = age;
+    this.name = name;
+    this.job = job;
+  }
+  virgin(){
+    console.log(`${this.name} is shitty`);
+  }
+}
+
+const shit1 = new shit ("shit", 32, "nope");
+console.log(shit1)
+shit1.virgin();
 
 // js course
 
