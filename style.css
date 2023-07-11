@@ -62,6 +62,7 @@ body.active {
 	color: #000;
 	background-color: #fff;
 	--dark-gray: #eee;
+	--orange-main: #e2a704;
 }
 /* scroll bar background color */
 body.active::-webkit-scrollbar-track {
@@ -529,12 +530,12 @@ main {
 	height: auto;
 	display: flex;
 	flex-direction: column;
+	overflow: visible;
 }
 .wrapp_main_project .row_wrp {
 	display: flex;
 	flex-direction: row;
 	position: relative;
-	overflow: visible;
 }
 .wrapp_main_project .row_wrp:first-child {
 	padding: 25px 0px;
@@ -566,8 +567,8 @@ main {
 }
 .wrapper_details_project {
 	display: none;
-	width: 100%;
-	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.4);
 	backdrop-filter: blur(3px);
@@ -610,6 +611,9 @@ main {
 	font-size: 2.3em;
 	text-align: center;
 }
+.container_btns_overflow button:hover {
+	border: 1px solid var(--orange-main);
+}
 .container_btns_overflow .button_overflow_viev_mode.selected {
 	border: 3px solid var(--orange-main);
 	background-color: transparent;
@@ -630,6 +634,14 @@ main {
 	gap: 10px;
 	margin: 10px 0px;
 	overflow: scroll;
+}
+.gallery {
+	gap: 10px;
+	margin: 10px 0px;
+	overflow: scroll;
+}
+.row_wrp.hidden {
+	display: none;
 }
 /* horizontal scrollbar */
 .row_wrp:nth-child(3)::-webkit-scrollbar {
@@ -653,7 +665,7 @@ main {
 .row_wrp .img_button_gall:hover {border: none;}
 
 .row_wrp .img_button_gall:hover .img_small {
-	border: 3px solid red;
+	border: 3px solid rgb(0, 109, 33);
 }
 .row_wrp .img_button_gall:nth-child(1) .img_small{
 	border: 3px solid var(--orange-main);

@@ -35,14 +35,8 @@ let logo_img = document.querySelector(".logo");
     }
   }
 
-// photo gallery viev mode toggling
-
+// Portfolio project for each!
 let wrapp_gallery_main = document.querySelectorAll(".wrapp_main_project");
-
-
-// details toggle about project
-
-  
 
   wrapp_gallery_main.forEach(wrapp_gallery_main => {
     // DETAILS PROJECT SHOW
@@ -53,14 +47,43 @@ let wrapp_gallery_main = document.querySelectorAll(".wrapp_main_project");
     }
     // SCREEN SIZE CHANGE VIEV MODES
 
-    let button_overflow_viev_mode = wrapp_gallery_main.querySelectorAll(".button_overflow_viev_mode");
+    let PC_VIEV_btn = wrapp_gallery_main.querySelector("#PC_VIEV_btn");
+    let pc_gallery = wrapp_gallery_main.querySelector("#PC_gallery");
+    PC_VIEV_btn.onclick = function() {
+      pc_gallery.classList.remove("hidden");
+      tablet_gallery.classList.add("hidden");
+      phone_gallery.classList.add("hidden");
 
-    button_overflow_viev_mode.onclick = function() {
-      if (button_overflow_viev_mode.classList == "button_overflow_viev_mode selected") {
-        button_overflow_viev_mode.classList.remove("selected");
-      } else {
-        button_overflow_viev_mode.classList.add("selected");
-      }
+      // change selected button styles
+      PC_VIEV_btn.classList.add("selected");
+      TABLET_VIEV_btn.classList.remove("selected");
+      PHONE_VIEV_btn.classList.remove("selected");
+    }
+    let TABLET_VIEV_btn = wrapp_gallery_main.querySelector("#TABLET_VIEV_btn");
+    let tablet_gallery = wrapp_gallery_main.querySelector("#TABLET_gallery");
+    TABLET_VIEV_btn.onclick = function() {
+      pc_gallery.classList.add("hidden");
+      tablet_gallery.classList.remove("hidden");
+      phone_gallery.classList.add("hidden");
+
+
+      // change selected button styles
+      TABLET_VIEV_btn.classList.add("selected");
+      PC_VIEV_btn.classList.remove("selected");
+      PHONE_VIEV_btn.classList.remove("selected");
+    }
+    let PHONE_VIEV_btn = wrapp_gallery_main.querySelector("#PHONE_VIEV_btn");
+    let phone_gallery = wrapp_gallery_main.querySelector("#PHONE_gallery");
+    PHONE_VIEV_btn.onclick = function() {
+      pc_gallery.classList.add("hidden");
+      tablet_gallery.classList.add("hidden");
+      phone_gallery.classList.remove("hidden");
+
+
+      // change selected button styles
+      PHONE_VIEV_btn.classList.add("selected");
+      PC_VIEV_btn.classList.remove("selected");
+      TABLET_VIEV_btn.classList.remove("selected");
     }
   })
 
