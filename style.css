@@ -933,7 +933,7 @@ footer {
 }
 /*------MEDIA queries-----*/
 @media (max-width:1200px) {
-	/* .div_shadow_jaz_tobi_kazav {
+	.div_shadow_jaz_tobi_kazav {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -946,7 +946,7 @@ footer {
 		font-size: 2em;
 		font-weight: 800;
 		z-index: 10;
-	} */
+	}
 	/* wrapper for about me */
 	.about_me_main_wrapper {
 		flex-direction: column;
