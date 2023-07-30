@@ -19,20 +19,10 @@ hamburger_button.onclick = function () {
 
 
 // theme toggle
-let btn_toggler = document.getElementById("toggle_theme_btn");
-let body = document.querySelector("body");
-
-let logo_img = document.querySelector(".logo");
+  let btn_toggler = document.getElementById("toggle_theme_btn");
+  let body = document.querySelector("body");
   btn_toggler.onclick = function() {
     body.classList.toggle("active");
-
-    if (body.classList == "active") {
-      logo_img.innerHTML = `<img src="Images/logo_M_black.png" alt="Bohdan Zahorovets logo"></img>`;
-      btn_toggler.innerHTML = `<i class="fa-solid fa-moon"></i>`;
-    } else {
-      logo_img.innerHTML = `<img src="Images/logo_M.png" alt="Bohdan Zahorovets logo"></img>`;
-      btn_toggler.innerHTML = `<i class="fa-solid fa-sun"></i>`;
-    }
   }
 
 // Portfolio project for each!
@@ -113,21 +103,6 @@ let wrapp_gallery_main = document.querySelectorAll(".wrapp_main_project");
 
 
 // If page is scrolled on certain part of the page change the link in menu
-  var OFFSET = 10;
-
-  window.addEventListener('scroll', () => {
-  
-    if (this.pageOffset > document.getElementById('about_me').offsetTop - OFFSET) {
-      document.getElementById("about_me_link").style.color = "var(--orange-main)";
-    } else if (this.pageOffset > document.getElementById('portfolio').offsetTop - OFFSET) {
-      document.getElementById("portfolio_link").style.color = "var(--orange-main)";
-    } else if (this.pageOffset > document.getElementById('contact_me').offsetTop - OFFSET) {
-      document.getElementById("contact_me_link").style.color = "var(--orange-main)";
-    } else {
-      return;
-    }
-  
-  })
 
 
 
