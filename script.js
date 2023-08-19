@@ -23,6 +23,11 @@ hamburger_button.onclick = function () {
   let body = document.querySelector("body");
   btn_toggler.onclick = function() {
     body.classList.toggle("active");
+    if(body.classList == "active"){
+      btn_toggler.innerHTML = `<i class="fa-solid fa-moon"></i>`;
+    } else {
+     btn_toggler.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    }
   }
 
 // Portfolio project for each!
@@ -103,34 +108,38 @@ let wrapp_gallery_main = document.querySelectorAll(".wrapp_main_project");
 
 
 // If page is scrolled on certain part of the page change the link in menu
-
-
-
-
-
-
-
-
-
-
-
-
-class shit {
-  constructor(age, name, job){
-    this.age = age;
-    this.name = name;
-    this.job = job;
+document.addEventListener('DOMContentLoaded', function(){ 
+  const sections = document.querySelectorAll(".PAGE_PART");
+  // IF the screen with is less than 768px menu links are different(in hamburger menu...)
+  if (window.innerWidth <= 768) {
+   var menu_links = document.querySelectorAll(".navigation_header_mobile li");
+  } else if(window.innerWidth > 768) {
+    var menu_links = document.querySelectorAll(".header_nav_big_screen li");
   }
-  virgin(){
-    console.log(`${this.name} is shitty`);
-  }
-}
 
-const shit1 = new shit ("shit", 32, "nope");
-console.log(shit1)
-shit1.virgin();
+  // functions to add and remove the active class from links as appropriate
+  const makeActive = (link) => menu_links[link].classList.add("active");
+  const removeActive = (link) => menu_links[link].classList.remove("active");
+  const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
+  
+  const sectionMargin = 300;
+  
+  let currentActive = 0;
 
-// js course
+  window.addEventListener("scroll", () => {
+    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1;
+    if (current !== currentActive) {
+      removeAllActive();
+      currentActive = current;
+      makeActive(current);
+    }
+  });
+}, false);
+
+
+
+
+
 
 
 
