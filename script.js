@@ -106,25 +106,25 @@ let wrapp_gallery_main = document.querySelectorAll(".wrapp_main_project");
     });
   })
 
-
+  // IF the screen with is less than 768px menu links are different(in hamburger menu...)
+  if (window.innerWidth <= 768) {
+    var menu_links = document.querySelectorAll(".navigation_header_mobile li");
+   } else if(window.innerWidth > 768) {
+     var menu_links = document.querySelectorAll(".header_nav_big_screen li");
+   }
 // If page is scrolled on certain part of the page change the link in menu
 document.addEventListener('DOMContentLoaded', function(){ 
   const sections = document.querySelectorAll(".PAGE_PART");
-  // IF the screen with is less than 768px menu links are different(in hamburger menu...)
-  if (window.innerWidth <= 768) {
-   var menu_links = document.querySelectorAll(".navigation_header_mobile li");
-  } else if(window.innerWidth > 768) {
-    var menu_links = document.querySelectorAll(".header_nav_big_screen li");
-  }
+
 
   // functions to add and remove the active class from links as appropriate
   const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
   
-  const sectionMargin = 300;
+  const sectionMargin = 100;
   
-  let currentActive = 0;
+  var currentActive = 1;
 
   window.addEventListener("scroll", () => {
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1;
