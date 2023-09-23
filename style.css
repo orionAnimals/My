@@ -38,7 +38,7 @@ body {
     margin: 0px;
     padding: 0px;
     height: fit-content auto;
-    min-width: 320px;
+    min-width: auto;
     max-width: auto;
     font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
@@ -59,7 +59,7 @@ html {
 	right: 10px;
 	width: fit-content;
 	height: 100vh;
-	z-index: 2;
+	z-index: 3;
 }
 .toggle_theme_btn {
 	display: block;
@@ -209,14 +209,15 @@ button {
 }
 .Header_wrapper.fixed .header {
 	background: var(--backdrop);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	-moz-backdrop-filter: blur(5px);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	-moz-backdrop-filter: blur(10px);
 }
 .header {
 	height: fit-content;
 	min-height: 60px;
 	width: 80%;
+	max-width: 1620px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -270,9 +271,9 @@ button {
 .Header_wrapper.EXPANDED .header{
 	height: auto;
 	background: var(--backdrop);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	-moz-backdrop-filter: blur(5px);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	-moz-backdrop-filter: blur(10px);
 }
 .navigation_header_mobile {
 	display: none;
@@ -396,10 +397,6 @@ button {
 	margin-bottom: 5px;
 	font-size: 1.3em;
 }
-.mobile_menu a:hover {
-	scale: 1.07;
-	background-color: rgba(0, 0, 0, 0.8);
-}
 
 /* MAIN */
 main {
@@ -411,6 +408,7 @@ main {
 }
 .CONTENT_CONTAINER {
 	width: 80%;
+	max-width: 1620px;
 	height: auto;
 	padding-top: 70px;
 }
@@ -521,7 +519,6 @@ main {
 	min-height: 50px;
 	border-radius: 50%;
 	border: 2px solid transparent;
-	z-index: 3;
 }
 .slider_visible_container {
 	width: 90%;
@@ -703,8 +700,8 @@ main {
 	min-height: 100%;
 	position: absolute;
 	background-color: var(--backdrop);
-	backdrop-filter: blur(3px);
-	-webkit-backdrop-filter: blur(3px);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
 	border-radius: 15px;
 	overflow: hidden;
 	z-index: 2;
@@ -795,7 +792,6 @@ main {
 	gap: 10px;
 	margin: 10px 0px;
 	overflow: scroll;
-	z-index: 3;
 }
 .gallery {
 	width: 100%;
@@ -803,7 +799,6 @@ main {
 	gap: 10px;
 	margin: 10px 0px;
 	overflow: scroll;
-	z-index: 3;
 }
 .row_wrp.hidden {
 	display: none;
@@ -1036,6 +1031,10 @@ footer {
 	}
 }
 @media (max-width:768px) {
+	.container_button_theme {
+		height: fit-content;
+		bottom: 15px;
+	}
 	body {
 		font-size: 8px;
 	}
@@ -1119,6 +1118,9 @@ footer {
 	.mobile_menu li {
 		border-radius: 15px;
 		font-size: 1.3em;
+	}
+	.mobile_menu a {
+		border-radius: 15px;
 	}
 }
 @media (max-width:310px) {
